@@ -2,6 +2,8 @@
 
 A memory saving alternative to `Active::Record`'s `find_in_batches` and `find_each` methods that spreads queries with large result sets into smaller manageable subsets while allowing you to set a sort order. This saves an enormous amount of memory / RAM when handling large queries (1000+), especially those that can grow over time.
 
+This gem is safe for concurrent inserts / deletes from the database as you query your model. It is guaranteed not to return duplicates as long as you have follow ActiveRecord's conventions of having a unique `id` primary key column.
+
 ## Installation
 
 Add this line to your application's Gemfile:
