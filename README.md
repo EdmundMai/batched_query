@@ -23,7 +23,7 @@ Or install it yourself as:
 You may either loop through ActiveRecord results using `BatchedQuery::Runner.each_set(query, &block)` like so:
 
     # Any ActiveRecord query
-    cars = Car.where("brand_name = 'Ferrari'")order("created_at desc")
+    cars = Car.where("brand_name = 'Ferrari'").order("created_at desc")
 
     # Set the limit of each subquery
     BatchedQuery::Runner.limit = 100
